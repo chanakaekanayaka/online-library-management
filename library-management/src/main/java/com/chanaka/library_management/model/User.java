@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED) // Inheritance සඳහා අත්‍යවශ්‍යයි 
-@Data // Getter/Setter ඉබේම හදයි (Encapsulation) 
+@Inheritance(strategy = InheritanceType.JOINED) // Inheritance සඳහා JOINED ක්‍රමය අත්‍යවශ්‍යයි [cite: 58-59]
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,5 +15,5 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private String userType; // ADMIN හෝ REGULAR ලෙස වෙන් කිරීමට 
+    private String userType; // මෙය "ADMIN" හෝ "REGULAR" විය යුතුය
 }
